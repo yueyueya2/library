@@ -21,6 +21,11 @@ export default {
       my:0
     }
   },
+  methods:{
+    hello(params) {
+        return 'hello world';
+    }
+  }
 
 }
 </script>
