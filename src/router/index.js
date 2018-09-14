@@ -16,11 +16,11 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path:'/',
+      path:'/swipe',
       component:swipe
     },
     {
-      path:'/page_bottom',
+      path:'/',
       component:page_bottom
     },
     {

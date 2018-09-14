@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @font-face{
   font-family: "iconfont";
   src: url('../../static/icon2-1/iconfont.eot'); /* IE9*/
@@ -53,8 +53,11 @@ body{
 }
 
 .my{
+  position: absolute;
+  left: 0;
+  top:0;
     width:100%;
-    height: 100%;
+    height:100%;
 }
 
 .top{
@@ -146,8 +149,9 @@ body{
 }
 
 .all_button{
-    position: relative;
+    position: absolute;
     top:17.5rem;
+    height:17.5rem;
     left: 1rem;
 }
 
@@ -179,7 +183,8 @@ body{
 }
 .clear{
     position: absolute;
-    top:12rem;
+    top:10rem;
 }
+
 
 </style>

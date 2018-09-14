@@ -1,9 +1,14 @@
 <template>
 <div class="bottom">
-  <div class="background"></div>
-  <i class="iconfont home" @click="tohome">&#xe602;</i>
-  <i class="iconfont friend" @click="tofriend">&#xe603;</i>
-  <i class="iconfont my" @click="tomy">&#xe60d;</i>
+  <i class="iconfont home"
+  @click="change(1)"
+  :class="{'home1':home===1}">&#xe602;</i>
+  <i class="iconfont friend"
+  @click="change(1)"
+  :class="{'friend1':friend===1}">&#xe603;</i>
+  <i class="iconfont my"
+  @click="change(1)"
+  :class="{'my1':my===1}">&#xe60d;</i>
 </div>
 </template>
 
@@ -11,30 +16,12 @@
 export default {
   data(){
     return {
-      footerhome:'',
-      active:false
+      friend:0,
+      home:0,
+      my:0
     }
   },
-  methods:{
-    tohome(){
-      if(home.style.color=="#E1E1E1"){
-        home.style.color="#8ED3EB";
-        home.$router.push({path:'/home_page'})
-      }
-    },
-    tofriend(){
-      if(friend.style.color=="#E1E1E1"){
-        friend.style.color="#8ED3EB";
-        friend.$router.push({path:'/book_friend'})
-      }
-    },
-    tomy(){
-      if(home.style.color=="#E1E1E1"){
-        home.style.color="#8ED3EB";
-        home.$router.push({path:'/my'})
-      }
-    }
-  }
+
 }
 </script>
 
@@ -78,13 +65,24 @@ export default {
   left: 0;
   color: #8ED3EB;
 }
+.home1{
+  color: #E1E1E1;
+}
 
 .friend{
   left: 33.3%;
+  color: #E1E1E1;
+}
+.friend1{
+  color: #8ED3EB;
 }
 
 .my{
   left: 66.6%;
+  color: #E1E1E1;
+}
+.my1{
+  color: #8ED3EB;
 }
 
 </style>
