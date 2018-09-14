@@ -1,8 +1,9 @@
 <template>
 <div class="bottom">
+  <div class="background"></div>
   <i class="iconfont home" @click="tohome">&#xe602;</i>
-  <i class="iconfont friend" @click="tofriend">&#xe604;</i>
-  <i class="iconfont my" @click="tomy">&#xe60c;</i>
+  <i class="iconfont friend" @click="tofriend">&#xe603;</i>
+  <i class="iconfont my" @click="tomy">&#xe60d;</i>
 </div>
 </template>
 
@@ -10,33 +11,28 @@
 export default {
   data(){
     return {
-      footerIndex:'',
+      footerhome:'',
       active:false
     }
   },
   methods:{
     tohome(){
-      this.$router.push({path:'/home_page'})
-      if(this.innerHTML=="&#xe602;"){
-        this.innerHTML="&#xe605;";
-      }else{
-        this.innerHTML="&#xe602;";
-        this.style="color:#8ED3EB";
-        this.style="color:#E1E1E1";
+      if(home.style.color=="#E1E1E1"){
+        home.style.color="#8ED3EB";
+        home.$router.push({path:'/home_page'})
       }
     },
     tofriend(){
-      this.$router.push({path:'/book_friend'})
-      if(this.innerHTML=="&#xe604;"){
-        this.innerHTML="&#xe603;"
-        this.style="color:#8ED3EB";
-      }else{
-        this.innerHTML="&#xe604;"
-        this.style="color:#E1E1E1";
+      if(friend.style.color=="#E1E1E1"){
+        friend.style.color="#8ED3EB";
+        friend.$router.push({path:'/book_friend'})
       }
     },
     tomy(){
-      this.$router.push({path:'/my'})
+      if(home.style.color=="#E1E1E1"){
+        home.style.color="#8ED3EB";
+        home.$router.push({path:'/my'})
+      }
     }
   }
 }
@@ -70,26 +66,25 @@ export default {
 
 .home,.friend,.my{
   position: fixed;
-  width: 33.3%;
+  width: 34%;
   height: 3rem;
+  font-size:2.5rem;
   color: #E1E1E1;
+  border:#E1E1E1;
   background: #F5F5F5;
 }
 
 .home{
   left: 0;
-  font-size:2.5rem;
   color: #8ED3EB;
 }
 
 .friend{
   left: 33.3%;
-  font-size: 3rem;
 }
 
 .my{
   left: 66.6%;
-  font-size: 3rem;
 }
 
 </style>

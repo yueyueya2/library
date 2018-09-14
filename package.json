@@ -15,7 +15,8 @@
     "mint-ui": "^2.2.13",
     "npm": "^6.4.1",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-swipe": "^2.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

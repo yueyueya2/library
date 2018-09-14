@@ -20,5 +20,11 @@ export default {
     font-size: 10px;
   }
 
+
+  .bottom{
+  position: fixed;
+  bottom: 0;
+}
+
 </style>
 

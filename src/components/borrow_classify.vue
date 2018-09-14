@@ -3,12 +3,7 @@
 </template>
 
 <script>
-var data=[{value:33, name:'计算机'},
-          {value:31, name:'艺术'},
-          {value:23, name:'法律'},
-          {value:13, name:'政治'},
-          {value:154, name:'文学'}
-          ];
+var data=[33, 31, 23, 13, 154];
 export default {
   mounted(){
     this.drawLine();
@@ -27,12 +22,12 @@ export default {
             type: 'pie',
             radius : '55%',
             center: ['50%', '50%'],
-            data:[{value:33, name:'计算机'},
-          {value:31, name:'艺术'},
-          {value:23, name:'法律'},
-          {value:13, name:'政治'},
-          {value:154, name:'文学'}
-          ],
+            data:[{value:data[0], name:'计算机'},
+                  {value:data[1], name:'艺术'},
+                  {value:data[2], name:'法律'},
+                  {value:data[3], name:'政治'},
+                  {value:data[0], name:'文学'}
+            ],
             itemStyle: {
                 emphasis: {
                     shadowBlur: 10,

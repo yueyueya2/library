@@ -7,7 +7,10 @@ import router from './router'
 import MintUI from 'mint-ui'
 import echarts from 'echarts'
 import 'mint-ui/lib/style.css'
+import { Swipe, SwipeItem } from 'vue-swipe'  // 加这里
 
+Vue.component('swipe', Swipe)  // 加这里
+Vue.component('swipe-item', SwipeItem) // 加这里
 Vue.config.productionTip = false
 Vue.prototype.$echarts=echarts;
 Vue.use(MintUI)

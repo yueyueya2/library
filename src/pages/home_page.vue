@@ -12,7 +12,7 @@
           <div class="like"></div>
           <span class="word5">猜你喜欢</span>
           <div class="border5"></div>
-          <div class="slide_book"></div>
+          <swipe class="slide_book"></swipe>
       </div>
       <div class="recommend-to-you">
           <div class="recommend"></div>
@@ -31,17 +31,17 @@
               <div class="book-table-1">
                   <div class="border2"></div>
                   <span class="word2">每日借书人数</span>
-                  <div id="column"></div>
+                  <daily_borrow class="column"></daily_borrow>
               </div>
               <div class="book-table-2">
                   <div class="border3"></div>
                   <span class="word3">今日借书类别占比</span>
-                  <div id="circle"></div>
+                  <borrow_classify class="circle"></borrow_classify>
               </div>
               <div class="book-table-3">
                   <div class="border4"></div>
                   <span class="word4">各类书的一周借阅时间总和</span>
-                  <div id="graph"></div>
+                  <borrow_time class="graph"></borrow_time>
               </div>
           </div>
       </div>
@@ -52,15 +52,23 @@
 
 <script>
 import page_bottom from '../components/page_bottom'
+import daily_borrow from '../components/daily_borrow'
+import borrow_classify from '../components/borrow_classify'
+import borrow_time from '../components/borrow_time'
+import swipe from '../components/swipe'
 export default {
   components:{
-    page_bottom
+    page_bottom,
+    daily_borrow,
+    borrow_classify,
+    borrow_time,
+    swipe
   }
 }
 
 </script>
 
-<style scoped>
+<style>
 @font-face{
   font-family: "iconfont";
   src: url('../../static/icon2-1/iconfont.eot'); /* IE9*/
@@ -80,6 +88,7 @@ export default {
 
 html{
   font-size: 16px;
+  background:#F8F8FF;
 }
 
 .home_page{
@@ -204,6 +213,10 @@ html{
 
 .slide_book{
   position: absolute;
+  left:1rem;
+  top:2.1rem;
+  width: 20.5rem;
+  height: 10rem;
 }
 
 .recommend-to-you{
@@ -338,10 +351,7 @@ html{
   width: 20.5rem;
   height: 14rem;
   z-index: -1;
-  border-top: solid 1px #b2adad;
-  border-bottom: solid 1px #b2adad;
-  border-right: solid 1px #b2adad;
-  border-left: solid 1px #b2adad;
+  border: solid 1px #E6E6FA;
 }
 
 .word2,.word3,.word4{
@@ -362,14 +372,12 @@ html{
   left: 1rem;
   width: 20.5rem;
   height: 16rem;
-  border-top: solid 1px #b2adad;
-  border-bottom: solid 1px #b2adad;
-  border-right: solid 1px #b2adad;
-  border-left: solid 1px #b2adad;
+  border: solid 1px #E6E6FA;
 }
 
-#graph,#circle,#column{
+.graph,.circle,.column{
   position: absolute;
+  top:2rem;
 }
 
 .white{

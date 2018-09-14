@@ -13,7 +13,6 @@ export default {
 
 <style>
 #app {
-  /* overflow: hidden; */
   width: 100%;
 }
 html,body{

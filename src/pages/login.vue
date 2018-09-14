@@ -81,7 +81,7 @@ export default {
   }
 }
 </script>
-<style lang="css" scoped>
+<style>
 .login{
     position: fixed;
     padding:0;

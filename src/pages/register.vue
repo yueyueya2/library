@@ -105,7 +105,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 @font-face{
   font-family: "iconfont";
   src: url('../../static/icon2-1/iconfont.eot'); /* IE9*/

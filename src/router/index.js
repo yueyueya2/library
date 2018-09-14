@@ -8,7 +8,7 @@ import my from '@/pages/my'
 import register from '@/pages/register'
 import forget_password1 from '@/pages/forget_password1'
 import page_bottom from '@/components/page_bottom'
-import borrow_classify from '@/components/borrow_classify'
+import swipe from '@/components/swipe'
 
 
 Vue.use(Router)
@@ -16,8 +16,8 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path:'/borrow_classify',
-      component:borrow_classify
+      path:'/',
+      component:swipe
     },
     {
       path:'/page_bottom',
@@ -28,7 +28,7 @@ export default new Router({
       component:login
     },
     {
-      path:'/',
+      path:'/home_page',
       component:home_page
     },
     {
