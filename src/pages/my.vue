@@ -1,6 +1,6 @@
 <template>
   <div class="my">
-      <div class="mys">
+      <div class="head">
           <div class="top"></div>
           <span class="word1">我的</span>
       </div>
@@ -17,7 +17,7 @@
           <input class="my_collection" type="submit" value="我的收藏">
           <input class="clear" type="submit" value="消除缓存">
       </div>
-      <page_bottom></page_bottom>
+      <page_bottom class="bottom"></page_bottom>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ import page_bottom from '../components/page_bottom'
 export default {
   components:{
     page_bottom
-  }
+  },
 }
 </script>
 
@@ -50,14 +50,19 @@ export default {
 
 body{
   font-size: 16px;
+  width:100%;
 }
 
 .my{
   position: absolute;
   left: 0;
   top:0;
-    width:100%;
-    height:100%;
+}
+
+.head{
+  position: absolute;
+  left: 0;
+  top:0;
 }
 
 .top{
@@ -184,6 +189,11 @@ body{
 .clear{
     position: absolute;
     top:10rem;
+}
+
+.bottom{
+  position: fixed;
+  bottom: 0;
 }
 
 

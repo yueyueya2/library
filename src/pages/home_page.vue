@@ -46,7 +46,7 @@
           </div>
       </div>
       <div class="white"></div>
-      <page_bottom class="bottom"></page_bottom>
+      <page_bottom class="bottom" v-on="page_start"></page_bottom>
   </div>
 </template>
 
@@ -57,13 +57,20 @@ import borrow_classify from '../components/borrow_classify'
 import borrow_time from '../components/borrow_time'
 import swipe from '../components/swipe'
 export default {
+  data(){
+    return {
+      friend:0,
+      home:0,
+      my:0
+    }
+  },
   components:{
     page_bottom,
     daily_borrow,
     borrow_classify,
     borrow_time,
     swipe
-  }
+  },
 }
 
 </script>

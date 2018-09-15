@@ -1,18 +1,15 @@
 <template>
-<div class="bottom">
-  <i class="iconfont home"
-  @click="change(1)"
-  :class="{'home1':home===1}">&#xe602;</i>
-  <i class="iconfont friend"
-  @click="change(1)"
-  :class="{'friend1':friend===1}">&#xe603;</i>
-  <i class="iconfont my"
-  @click="change(1)"
-  :class="{'my1':my===1}">&#xe60d;</i>
-</div>
+  <div class="bottom">
+      <i class="iconfont home"><router-link to="/home_page" exact>&#xe602;</router-link></i>
+
+      <i class="iconfont friend"><router-link to="/friend" exact>&#xe603;</router-link></i>
+
+      <i class="iconfont my"><router-link to="/my" exact>&#xe60d;</router-link>&#xe60d;</i>
+  </div>
 </template>
 
 <script>
+
 export default {
   data(){
     return {
@@ -22,15 +19,45 @@ export default {
     }
   },
   methods:{
-    hello(params) {
-        return 'hello world';
-    }
+    changehome:function(){
+      this.home=1;
+      this.friend=0;
+      this.my=0;
+    },
+    changefriend:function(){
+      this.home=0;
+      this.friend=1;
+      this.my=0;
+    },
+    changemy:function(){
+      this.home=0;
+      this.friend=0;
+      this.my=1;
+    },
+  },
+  computed:{
+    page_start:function(){
+      this.home=1;
+      this.friend=0;
+      this.my=0;
+    },
   }
 
 }
 </script>
 
 <style scoped>
+
+a{
+    color: #E1E1E1;
+    text-decoration: none;
+}
+
+.router-link-active {
+    color: #8ED3EB;
+    text-decoration: none;
+}
+
 @font-face{
   font-family: "iconfont";
   src: url('../../static/icon2-1/iconfont.eot'); /* IE9*/
@@ -41,7 +68,7 @@ export default {
 }
 
 .iconfont {
-  font-family:"iconfont" !important;
+  font-family:"iconfont" ;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
@@ -50,7 +77,7 @@ export default {
 
 .bottom{
   position: fixed;
-  width: 22.5rem;
+  width: 100%;
   height: 3rem;
   bottom: 0;
   left: 0;
@@ -68,26 +95,14 @@ export default {
 
 .home{
   left: 0;
-  color: #8ED3EB;
-}
-.home1{
-  color: #E1E1E1;
 }
 
 .friend{
   left: 33.3%;
-  color: #E1E1E1;
-}
-.friend1{
-  color: #8ED3EB;
 }
 
 .my{
   left: 66.6%;
-  color: #E1E1E1;
-}
-.my1{
-  color: #8ED3EB;
 }
 
 </style>

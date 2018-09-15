@@ -3,11 +3,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import login from '@/pages/login'
 import home_page from '@/pages/home_page'
-import book_friend from '@/pages/book_friend'
+import friend from '@/pages/friend'
 import my from '@/pages/my'
 import register from '@/pages/register'
 import forget_password1 from '@/pages/forget_password1'
-import page_bottom from '@/components/page_bottom'
+import book_friend from '@/components/book_friend'
 import swipe from '@/components/swipe'
 
 
@@ -20,11 +20,11 @@ export default new Router({
       component:swipe
     },
     {
-      path:'/',
-      component:page_bottom
+      path:'/sss',
+      component:book_friend
     },
     {
-      path:'/login',
+      path:'/',
       component:login
     },
     {
@@ -32,8 +32,8 @@ export default new Router({
       component:home_page
     },
     {
-      path:'/book_friend',
-      component:book_friend
+      path:'/friend',
+      component:friend
     },
     {
       path:'/my',
@@ -44,7 +44,7 @@ export default new Router({
       component:register
     },
     {
-      path:'/forget_password1',
+      path:'/sss',
       component:forget_password1
     }
   ]
