@@ -1,33 +1,37 @@
 <template>
-  <div id="password1">
+  <div class="password1">
     <div class="head">
             <i class="icon iconfont back" @click="back">&#xe600;</i>
             <div class="top"></div>
             <span class="word1">忘记密码</span>
     </div>
     <div class="inner">
-        <input type="text" placeholder="输入手机号" class="phone_number">
-        <input type="text" placeholder="输入验证码" class="input_number">
-        <input type="button" value="获取验证码" class="get" @click="time">
-        <input type="button" value="下一步" class="confirm" @click="next">
+        <input type="password" placeholder="输入新密码" class="password_one">
+        <input type="password" placeholder="再次输入新密码" class="password_two">
+        <input type="button" value="确认" class="confirm" @click="confirm">
     </div>
 </div>
 </template>
 
 <script>
-import forget_password2 from '@/pages/forget_password2'
+import {Toast} from 'mint-ui'
+import forget_password1 from '@/pages/forget_password1'
 import login from '@/pages/login'
-var stop,count=60;
 export default {
   methods:{
-    next:function(){
-      this.$router.push({path:'forget_password2'})
-    },
-    time:function(){
-
-    },
     back:function(){
-      this.$router.push({path:'login'})
+      this.$router.push({path:'forget_password1'})
+    },
+    confirm:function(){
+      Toast({
+              message:'修改成功',
+              duration:600
+            })
+            setTimeout(()=>{
+              this.$router.push({
+                            path: 'login'
+                        })
+            },1000)
     }
   }
 }
@@ -118,7 +122,7 @@ body{
   width: 100%;
 }
 
-.phone_number{
+.password_one,.password_two{
     position: absolute;
     width: 20rem;
     height: 3rem;
@@ -132,36 +136,8 @@ body{
     box-shadow:0 0 10px #c9cccf;
 }
 
-.input_number{
-    position: absolute;
-    width: 9.5rem;
-    height: 3rem;
+.password_two{
     top:4rem;
-    padding-left: 0.5rem;
-    background: #FFFFFF;
-    border-radius: 4px;
-    border: 0 white;
-    -moz-box-shadow:0 0 10px #c9cccf;
-    -webkit-box-shadow:0 0 10px #c9cccf;
-    box-shadow:0 0 10px #c9cccf;
-}
-
-.get{
-    position: absolute;
-    width: 10rem;
-    height: 3rem;
-    top:4rem;
-    left: 10.625rem;
-    font-family: NotoSansCJKsc-Regular;
-    font-size: 14px;
-    color: #FFFFFF;
-    text-align: center;
-    background-image: linear-gradient(to right, #57BAD9 18%, #2593AE 100%);
-    border-radius: 8px;
-    border: 0 white;
-    -moz-box-shadow:0 0 10px #c9cccf;
-    -webkit-box-shadow:0 0 10px #c9cccf;
-    box-shadow:0 0 10px #c9cccf;
 }
 
 .confirm{

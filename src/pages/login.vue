@@ -18,6 +18,9 @@
   </div>
 </template>
 <script>
+import home_page from '@/pages/home_page'
+import register from '@/pages/register'
+import forget_password1 from '@/pages/forget_password1'
 import {Toast} from 'mint-ui'
 export default {
   data(){
@@ -27,7 +30,6 @@ export default {
     }
   },
   methods:{
-
   Register(){
     Toast({
         message:'正在前往注册',
@@ -35,7 +37,7 @@ export default {
       })
     setTimeout(()=>{
       this.$router.push({
-                    path: '/register'
+                    path: 'register'
                 })
     },1000)
   },
@@ -46,7 +48,7 @@ export default {
       })
     setTimeout(()=>{
       this.$router.push({
-                    path: '/forget_password1'
+                    path: 'forget_password1'
                 })
     },1000)
   },
@@ -73,7 +75,7 @@ export default {
           })
 					setTimeout(()=>{
 						this.$router.push({
-	                        path: '/home_page'
+	                        path: 'home_page'
 	                    })
 					},1000)
         }

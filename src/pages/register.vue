@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import login from '@/pages/login'
 import {Toast} from 'mint-ui'
 export default {
   data(){
@@ -42,8 +43,8 @@ export default {
       }
   },
   methods:{
-    back(){
-
+    back:function(){
+      this.$router.push({path:'login'})
     },
     time(val){
 

@@ -1,14 +1,17 @@
 /* eslint-disable */
 import Vue from 'vue'
 import Router from 'vue-router'
+import book_friend from '@/components/book_friend'
 import login from '@/pages/login'
 import home_page from '@/pages/home_page'
 import friend from '@/pages/friend'
 import my from '@/pages/my'
 import register from '@/pages/register'
 import forget_password1 from '@/pages/forget_password1'
-import book_friend from '@/components/book_friend'
-import swipe from '@/components/swipe'
+import forget_password2 from '@/pages/forget_password2'
+import change_password1 from '@/pages/change_password1'
+import change_password2 from '@/pages/change_password2'
+import change_head from '@/pages/change_head'
 
 
 Vue.use(Router)
@@ -16,15 +19,11 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path:'/swipe',
-      component:swipe
-    },
-    {
-      path:'/sss',
+      path:'/book_friend',
       component:book_friend
     },
     {
-      path:'/',
+      path:'/login',
       component:login
     },
     {
@@ -44,8 +43,24 @@ export default new Router({
       component:register
     },
     {
-      path:'/sss',
+      path:'/forget_password1',
       component:forget_password1
-    }
+    },
+    {
+      path:'/forget_password2',
+      component:forget_password2
+    },
+    {
+      path:'/change_password1',
+      component:change_password1
+    },
+    {
+      path:'/change_password2',
+      component:change_password2
+    },
+    {
+      path:'/',
+      component:change_head
+    },
   ]
 })
