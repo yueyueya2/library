@@ -5,12 +5,11 @@
           <span class="word1">我的</span>
       </div>
       <div class="user">
-          <i class="icon iconfont smile">&#xe609;</i>
+          <i class="icon iconfont1 smile">&#xe609;</i>
           <div class="box"></div>
           <div class="username" >小李子</div>
           <div class="userschool" >广州大学</div>
-          <i class="icon iconfont no_authenty"></i>
-          <img class="authenty">
+          <i class="icon iconfont2 no_authenty" @click="authenty">&#xe603;</i>
       </div>
       <div class="all_button">
           <input class="my_borrow" type="submit" value="我的借阅">
@@ -23,16 +22,25 @@
 
 <script>
 import page_bottom from '../components/page_bottom'
+import authenty from '../pages/authenty'
 export default {
   components:{
-    page_bottom
+    page_bottom,
+    authenty
   },
+  methods:{
+    authenty:function(){
+      this.$router.push({
+        path:'authenty'
+      })
+    }
+  }
 }
 </script>
 
 <style scoped>
 @font-face{
-  font-family: "iconfont";
+  font-family: "iconfont1";
   src: url('../../static/icon2-1/iconfont.eot'); /* IE9*/
   src: url('../../static/icon2-1/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
   url('../../static/icon2-1/iconfont.woff') format('woff'), /* chrome, firefox */
@@ -40,13 +48,32 @@ export default {
   url('../../static/icon2-1/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
 
-.iconfont {
-  font-family:"iconfont" !important;
+.iconfont1 {
+  font-family:"iconfont1" !important;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@font-face{
+  font-family: "iconfont2";
+  src: url('../../static/icon2-2/iconfont.eot'); /* IE9*/
+  src: url('../../static/icon2-2/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../../static/icon2-2/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../../static/icon2-2/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../../static/icon2-2/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont2 {
+  font-family:"iconfont2" !important;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
 
 body{
   font-size: 16px;
@@ -55,6 +82,7 @@ body{
 
 .my{
   position: absolute;
+  width: 100%;
   left: 0;
   top:0;
 }
@@ -63,6 +91,7 @@ body{
   position: absolute;
   left: 0;
   top:0;
+  width: 100%;
 }
 
 .top{
@@ -144,13 +173,12 @@ body{
     height: 1.5rem;
 }
 
-.no_authenty,.authenty{
+.no_authenty{
     position: absolute;
     top:6.9375rem;
     left: 4rem;
-    width:30%;
-    height: 1.125rem;
-    display: block;
+    font-size: 8px;
+    color: #FF9D91;
 }
 
 .all_button{

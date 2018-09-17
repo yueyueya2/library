@@ -1,30 +1,48 @@
 <template>
-  <div id="password1">
-    <div class="head">
+  <div class="authenty">
+      <div class="head">
             <i class="icon iconfont back" @click="back">&#xe600;</i>
             <div class="top"></div>
-            <span class="word1">修改密码</span>
-    </div>
-    <div class="inner">
-        <input type="text" placeholder="输入手机号" class="phone_number">
-        <input type="text" placeholder="输入验证码" class="input_number">
-        <input type="button" value="获取验证码" class="get" @click="time">
-        <input type="button" value="下一步" class="confirm" @click="confirm">
-    </div>
-</div>
+            <span class="word1">认证</span>
+      </div>
+      <div class="info">
+        <input type="text" class="phone_number" placeholder="输入手机号" v-model="phone_number">
+        <input type="text" class="id_number" placeholder="输入教务系统学号" v-model="id_number">
+        <input type="password" class="id_password" placeholder="输入教务系统密码" v-modai="id_password">
+        <input type="password" class="this_password" placeholder="输入该软件密码" v-model="this_password">
+      </div>
+      <input type="button" class="confirm" value="认证" @click="confirm">
+  </div>
 </template>
 
 <script>
-var stop,count=60;
-import change_password1 from '@/pages/change_password1'
-import change_head from '@/pages/change_head'
+import {Toast} from 'mint-ui'
+import my from '@/pages/my'
 export default {
+  data(){
+    return{
+      phone_number:'',
+      id_number:'',
+      id_password:'',
+      this_password:''
+    }
+  },
   methods:{
-    confirm:function(){
-      this.$router.push({path:'change_password1'})
-    },
     back:function(){
-      this.$router.push({path:'change_head'})
+      this.$router.push({
+        path:'my'
+      })
+    },
+    confirm:function(){
+      Toast({
+              message:'认证成功',
+              duration:600
+            })
+            setTimeout(()=>{
+              this.$router.push({
+                            path: 'my'
+                        })
+            },1000)
     }
   }
 }
@@ -65,6 +83,11 @@ body{
     color: #AEAEAE;
 }
 
+.authenty{
+  position: absolute;
+  top:0;
+  width: 100%;
+}
 
 .head{
   position: absolute;
@@ -108,14 +131,13 @@ body{
     letter-spacing: 0;
 }
 
-.inner{
+.info{
   position: absolute;
-  top:6.25rem;
+  top:6rem;
   left: 1rem;
-  width: 100%;
 }
 
-.phone_number{
+.phone_number,.id_number,.id_password,.this_password,.confirm{
     position: absolute;
     width: 20rem;
     height: 3rem;
@@ -129,43 +151,24 @@ body{
     box-shadow:0 0 10px #c9cccf;
 }
 
-.input_number{
-    position: absolute;
-    width: 9.5rem;
-    height: 3rem;
-    top:4rem;
-    padding-left: 0.5rem;
-    background: #FFFFFF;
-    border-radius: 4px;
-    border: 0 white;
-    -moz-box-shadow:0 0 10px #c9cccf;
-    -webkit-box-shadow:0 0 10px #c9cccf;
-    box-shadow:0 0 10px #c9cccf;
+.id_number{
+  top:4rem;
 }
 
-.get{
-    position: absolute;
-    width: 10rem;
-    height: 3rem;
-    top:4rem;
-    left: 10.625rem;
-    font-family: NotoSansCJKsc-Regular;
-    font-size: 14px;
-    color: #FFFFFF;
-    text-align: center;
-    background-image: linear-gradient(to right, #57BAD9 18%, #2593AE 100%);
-    border-radius: 8px;
-    border: 0 white;
-    -moz-box-shadow:0 0 10px #c9cccf;
-    -webkit-box-shadow:0 0 10px #c9cccf;
-    box-shadow:0 0 10px #c9cccf;
+.id_password{
+  top:8rem;
+}
+
+.this_password{
+  top:12rem;
 }
 
 .confirm{
+    top:23rem;
     position: absolute;
     width: 20.5rem;
     height: 3rem;
-    top:9rem;
+    left: 1rem;
     font-family: NotoSansCJKsc-Regular;
     font-size: 18px;
     color: #FFFFFF;
@@ -177,4 +180,5 @@ body{
     -webkit-box-shadow:0 0 10px #c9cccf;
     box-shadow:0 0 10px #c9cccf;
 }
+
 </style>

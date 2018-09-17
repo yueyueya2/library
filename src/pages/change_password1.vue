@@ -1,21 +1,39 @@
 <template>
   <div class="password1">
     <div class="head">
-            <i class="icon iconfont back">&#xe600;</i>
+            <i class="icon iconfont back" @click="back">&#xe600;</i>
             <div class="top"></div>
             <span class="word1">修改密码</span>
     </div>
     <div class="inner">
         <input type="password" placeholder="输入密码" class="password_one">
         <input type="password" placeholder="再次输入密码" class="password_two">
-        <input type="button" value="确认" class="confirm">
+        <input type="button" value="确认" class="confirm" @click="confirm">
     </div>
 </div>
 </template>
 
 <script>
+import change_password2 from '@/pages/change_password2'
+import change_head from '@/pages/change_head'
+import {Toast} from 'mint-ui'
 export default {
-
+  methods:{
+    back:function(){
+      this.$router.push({path:'change_password2'})
+    },
+    confirm:function(){
+      Toast({
+              message:'修改成功',
+              duration:600
+            })
+            setTimeout(()=>{
+              this.$router.push({
+                            path: 'change_head'
+                        })
+            },1000)
+    }
+  }
 }
 </script>
 

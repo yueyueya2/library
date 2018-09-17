@@ -12,7 +12,8 @@ import forget_password2 from '@/pages/forget_password2'
 import change_password1 from '@/pages/change_password1'
 import change_password2 from '@/pages/change_password2'
 import change_head from '@/pages/change_head'
-
+import search from '@/pages/search'
+import authenty from '@/pages/authenty'
 
 Vue.use(Router)
 
@@ -59,8 +60,16 @@ export default new Router({
       component:change_password2
     },
     {
-      path:'/',
+      path:'/change_head',
       component:change_head
     },
+    {
+      path:'/search',
+      component:search
+    },
+    {
+      path:'/authenty',
+      component:authenty
+    }
   ]
 })

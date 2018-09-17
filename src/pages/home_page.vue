@@ -2,7 +2,7 @@
   <div class="home_page">
       <div class="head">
           <span class="head_word">小懂首页</span>
-          <i class="icon iconfont search">&#xe601;</i>
+          <i class="icon iconfont search" @click="search">&#xe601;</i>
       </div>
       <div class="notice">
           <span class="word1">公告</span>
@@ -56,6 +56,8 @@ import daily_borrow from '../components/daily_borrow'
 import borrow_classify from '../components/borrow_classify'
 import borrow_time from '../components/borrow_time'
 import swipe from '../components/swipe'
+import search from '@/pages/search'
+// import func from './vue-temp/vue-editor-bridge';
 export default {
   data(){
     return {
@@ -71,6 +73,11 @@ export default {
     borrow_time,
     swipe
   },
+  methods:{
+    search:function(){
+      this.$router.push({path:'search'})
+    }
+  }
 }
 
 </script>
